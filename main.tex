@@ -1,0 +1,46 @@
+ \documentclass[a4paper]{article}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{Future Work}
+\author{}
+
+\begin{document}
+\maketitle
+
+
+
+\section{Introduction}
+
+In this dissertation, we have developed the machinery to infer the rheological parameters using adjoints and in turn construct the Hessian to obtain robust estimates of the plate couplings and global rheological parameters such as the strain rate exponent, yield stress and activation energy. We first used a proof of concept model in Chapter 2 where we considered an idealized version where we had young and old subduction zones with various types of forces acting on the slab. We were able to illustrate how well our methods were able to infer the parameters and understand where the adjoint falls short. Furthermore, we made use of the covariance matrix (inverse of the Hessian) to obtain the trade-offs between the rheological parameters and understand how those parameters affect surface observables such as plate velocity.
+
+Building on this work in Chapter 2, we extend these methods to include average effective viscsoity data where available. Furthermore, we extend our statistical estimation to extrinsic quantities such as stresses in the the fault zones and local viscosities. Doing so we were able to infer not only the plate couplings but the average shear and stresses within some of the major subduction zones.
+
+We also extended our methods to using topography data and show a proof of concept model for a simple falling cold mass. While the adjoint for stress data works, we encounter an issue with the forward model with regard to the boundary condition. We found that the free-slip boundary condition does not allow for realistic topography and instead we encounter larger stresses than are observed at trenches. 
+
+Moving forward, there needs to be changes to the forward model, namely the boundary condition such that there is a better way for forward predictions of topography at trenches such that those forward model results can be incorporated into an inverse problem. While incorporating topography is an important aspect of this inverse problem, the use of the geoid can be of fundamental importance for these types of inverse problems. Previous work have made use of the geoid to test forward models results with less sophisticated forward models (purely temperature dependent models). Incorporating the geoid can be formulated in such a way to allow for a self-gravitating model with present day observations which would be a larger step in more accurate uncertainty quantification problems for geodynamics. Incorporating the geoid in such a way, would require little modifications based on work presented in this thesis.
+
+While topography is a measure of stress that is an important piece of data, the observed stress orientations within plates and slabs is another constraint that can be incorporated. However, formulating the adjoint based on stress orientations is not clear as it requires care on whether the misfit should focus on the direction of stress orientations and how to map this post-processing of the data to an inverse problem. Another potential issue would be should this piece of information be applied on a nodal basis which may lead to more expensive computations. Incorporating different pieces of data is important; however, understanding which parameters are senstitive to a certain type of data is important as it can help in reduce of variance of such parameter. To aid in this, one can use global sensitivity analysis to determine which parameters can best explain the data, which in turn will allow for more high fidelity estimates of such parameters.
+
+While we have outlined how to improve upon the inference phase, there a few underlying issue pertaining to the data uncertainty. In our forward models, we assume that there is no error in the buoyancy distribution, which is not the case based on how it is created. However, ascribing a variance is not simple as there is not a set of guidelines on the correctness of the data. Furthermore, the uncertainty of the fault zone geometry must be taken into account, as this can influence the range of inferred estimates of the rheology. Additionally, accounting for model discrepancy is a next step in how one goes about making uncertainty estimates. Therefore, while we have focused on the traditional case of using surface observations to inform the rheological parameters while adding a statistical estimation using the Hessian, there still is 
+
+
+
+
+
+
+
+
+\end{document}
